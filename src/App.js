@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import utils from './math-utils';
+import Game from './components/Game';
 
-function App() {
+    const StarMatch = () => {
+      const [gameId, setGameId] = useState(1);
+      return <Game key={gameId} startNewGame={() => setGameId(gameId + 1)}/>;
+    }
+    
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <StarMatch />
+  )
 }
-
-export default App;
